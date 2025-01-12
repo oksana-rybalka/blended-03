@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { transformCountriesData, transformCountryData } from '../helpers/transformCountries';
+import { transformCountriesData, transformCountryData } from '../helpers/';
 
 axios.defaults.baseURL = 'https://restcountries.com/v3.1';
 
