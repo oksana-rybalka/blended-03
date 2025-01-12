@@ -3,9 +3,10 @@ import Container from '../components/Container/Container';
 import Heading from '../components/Heading/Heading';
 import Section from '../components/Section/Section';
 import { getCountries } from '../service/countryApi';
+import CountryList from '../components/CountryList/CountryList';
 
 const Home = () => {
-  const [country, setCountry] = useState([]);
+  const [countrys, setCountrys] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -14,7 +15,7 @@ const Home = () => {
       setIsLoading(true);
       try {
         const newCountries = await getCountries();
-        setCountry(newCountries);
+        setCountrys(newCountries);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -24,11 +25,11 @@ const Home = () => {
     fetchCountries();
   }, []);
 
-  console.log(country);
   return (
     <Section>
       <Container>
         <Heading title="Home" bottom />
+        <CountryList countrys={countrys} />
       </Container>
     </Section>
   );

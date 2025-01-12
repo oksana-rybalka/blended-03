@@ -1,4 +1,3 @@
-import Heading from './components/Heading/Heading';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import Header from './components/Header/Header';
@@ -16,7 +15,7 @@ export const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/country" element={<SearchCountry />} />
           <Route path="/country/:countryId" element={<Country />} />
-          <Route path="*" element={<Navigate to="/" />} />
+          {/* <Route path="*" element={<Navigate to="/" />} /> */}
         </Routes>
       </Suspense>
     </>
